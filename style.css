@@ -151,16 +151,22 @@ main {
     font-weight: bold;
 }
 .msg-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vmin;
     padding: 2rem;
     background-color: var(--muted-slate);
     border-radius: 1rem;
     border: 2px solid var(--amber-glow);
     box-shadow: 0 0 2rem rgba(251, 191, 36, 0.3);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
 }
 .hide{
     display: none;
@@ -215,9 +221,5 @@ main {
     
     #msg {
         font-size: 6vmin;
-    }
-    
-    .msg-container {
-        height: 40vmin;
     }
 }
