@@ -1,0 +1,223 @@
+/* Color Palette */
+:root {
+    --deep-midnight-blue: #0f172a;
+    --muted-slate: #334155;
+    --electric-cyan: #22d3ee;
+    --hot-pink: #f472b6;
+    --amber-glow: #fbbf24;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--deep-midnight-blue);
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+.container{
+    /* height: 70vh; */
+    display: flex;
+    justify-content: center;
+}
+
+.players {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.player-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-input label {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.player-input input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--muted-slate);
+    background-color: var(--deep-midnight-blue);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.player-input input:focus {
+    outline: none;
+    border-color: var(--amber-glow);
+}
+
+#turn-indicator {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--amber-glow);
+    font-weight: bold;
+}
+
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2vmin;
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: 2px solid var(--muted-slate);
+    background-color: var(--deep-midnight-blue);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    font-size: 8vmin;
+    color: var(--electric-cyan);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.box:hover:not(:disabled) {
+    background-color: var(--muted-slate);
+    border-color: var(--amber-glow);
+    transform: scale(1.05);
+}
+
+#reset{
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    border: 2px solid var(--muted-slate);
+    background-color: var(--muted-slate);
+    color: white;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+#reset:hover {
+    background-color: var(--deep-midnight-blue);
+    border-color: var(--amber-glow);
+    transform: translateY(-2px);
+}
+
+#new-game{
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    border: 2px solid var(--amber-glow);
+    background-color: var(--amber-glow);
+    color: var(--deep-midnight-blue);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#new-game:hover {
+    background-color: var(--deep-midnight-blue);
+    color: var(--amber-glow);
+    transform: translateY(-2px);
+}
+#msg{
+    color: var(--amber-glow);
+    font-size: 5vmin;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.msg-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vmin;
+    padding: 2rem;
+    background-color: var(--muted-slate);
+    border-radius: 1rem;
+    border: 2px solid var(--amber-glow);
+    box-shadow: 0 0 2rem rgba(251, 191, 36, 0.3);
+}
+.hide{
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .game {
+        height: 80vmin;
+        width: 80vmin;
+    }
+    .box {
+        height: 24vmin;
+        width: 24vmin;
+        font-size: 10vmin;
+    }
+    #turn-indicator {
+        font-size: 1.2rem;
+    }
+    .players {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .container {
+        height: auto;
+    }
+    #msg {
+        font-size: 4vmin;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .players {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .game {
+        height: 80vmin;
+        width: 80vmin;
+    }
+    
+    .box {
+        height: 24vmin;
+        width: 24vmin;
+        font-size: 10vmin;
+    }
+    
+    #turn-indicator {
+        font-size: 1.2rem;
+    }
+    
+    #msg {
+        font-size: 6vmin;
+    }
+    
+    .msg-container {
+        height: 40vmin;
+    }
+}
